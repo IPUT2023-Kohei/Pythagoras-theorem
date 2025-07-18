@@ -1,0 +1,189 @@
+body {
+    font-family: 'Chalk-JP', sans-serif;
+    background-image: url("../img/黒板3.png");
+    background-repeat: no-repeat;
+    background-size: 100% 134%; 
+    color: #FFFFFF; /* テキストの色 */
+}
+
+@font-face {
+    font-family: "Chalk-JP";
+    src: url("../font/Chalk-JP.otf");
+    font-display: swap;
+}
+
+*::-webkit-scrollbar {
+    display: none; /* スクロールバーを非表示 */
+}
+
+.contents {
+    margin: auto; /* コンテンツを中央に配置 */
+}
+
+p {
+    position: relative;
+    top: 240px; /* 上からの位置 */
+    left: 60px; /* 左からの位置 */
+    color: white; /* テキストの色 */
+    font-style: normal;
+}
+
+.button {
+    display: inline-block; /* ボタンを横並びにする */
+    border: none; /* 枠線をなくす */
+    border-radius: 10px; /* 角丸をつける */
+    padding: 10px 25px; /* ボタンの内側の余白 */
+    margin: 20px; /* ボタン同士の余白 */
+    background-color: #000000; /* ボタンの背景色 */
+    color: white; /* ボタンの文字色 */
+    text-align: center; /* ボタンのテキストを中央揃えにする */
+    text-decoration: none; /* テキストに下線をつけない */
+    cursor: pointer; /* マウスポインタを変更する */
+    min-width: 200px; /* ボタンの最小幅 */
+    border: 2px solid #FFFFFF; /* ボタンの枠線 */
+}
+
+.button:hover {
+    background-color: #ffffff; /* ホバー時の背景色 */
+    color: #000000; /* ホバー時の文字色 */
+}
+
+.cbutton {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+}
+
+/* 画面表示時にはタイトル以外は非表示 */
+#mondai, #result, #minitips {
+    display: none; /* 初期状態では非表示 */
+}
+
+/* タイトル画面 */
+#title {
+    margin: 0 auto; /* 中央揃え */
+    position: relative;
+    display: flex;
+    text-align: center;
+    vertical-align: center;
+}
+
+/* 問題画面 */
+#answerMark {
+    position: absolute;
+    margin: 5% 35%; /* 上下左右のマージン */
+}
+
+.mondai {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* 要素を均等に配置 */
+}
+
+/* 問題タイトル */
+#problemTitle {
+    position: relative;
+    top: 210px; 
+    left: -300px;
+}
+
+/* 問題文 */
+#problem {
+    position: relative;
+    font-size: 35px;
+    top: 293px;
+    left: -180px;
+}
+
+/* ユーザーの解答入力フィールド */
+#userAnswer {
+    position: relative;
+    top: 320px;
+    size: 50px;
+}
+
+/* 問題画面のスタイル */
+#mondai {
+    padding: 20px; /* 内側の余白 */
+    border-radius: 10px; /* 角丸をつける */
+    text-align: center; /* テキストを中央揃え */
+    font-size: 24px; /* フォントサイズ */
+    position: relative; /* 位置を相対的に設定 */
+    margin: 40px; /* 上下のマージンを追加 */
+}
+
+/* 回答表示エリア */
+#teisyutuButton, #nextButton {
+    font-size: 25px; /* フォントサイズ */
+}
+
+#resultButton, #tryAgainButton {
+    font-size: 30px; /* フォントサイズ */
+}
+
+/* 結果画面 */
+#result {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* 要素を均等に配置 */
+}
+
+#resultAnswer {
+    font-size: 60px;
+    margin-top: 200px; 
+    margin-left: 200px;
+}
+
+#score {
+    font-size: 24px;
+    top: 300px; 
+    margin-left: 200px;
+}
+
+#answerList {
+    font-size: 38px;
+    margin-top: 100px;  
+    margin-left: 40px;
+}
+
+#minitips {
+    text-align: center; /* テキストを中央揃え */
+    position: relative; /* 位置を相対的に設定 */
+    display: flex;
+    font-family: "メイリオ";
+}
+
+.mini {
+    background-image: url("../img/豆知識.jpg");
+    background-size: 300% auto;
+    background-repeat: no-repeat;
+    font-size: 45px;
+}
+
+.tips {
+    background-image: url("../img/注意事項.jpg");
+    background-size: 300% auto;
+    background-repeat: no-repeat;
+    font-size: 26px;
+}
+
+#output1, #output2, #output3, #output4, #output5, #output6, #output7 {
+    font-size: 50px;
+    margin: center;
+    font-weight: bold;
+    color: yellow;
+}
+
+#output8, #output9, #output10, #output11 {
+    font-size: 30px;
+    margin: center;
+    font-weight: bold;
+    color: yellow;
+}
