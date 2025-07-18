@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ja"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="font/Chalk-JP.otf" rel="stylesheet">
+        <title>暗算で？の定理をマスターせよ</title>
+        <link rel="stylesheet" href="./css/style.css"> <!-- 外部CSSファイル -->
+    </head> 
+    <body>
+        <!-- タイトル画面 -->
+        <div id="title">
+            <div style="display: flex; flex-flow: column; width: 45%;">
+                <p style="font-size: 38px;" id="titleText">暗算で？の定理をマスターせよ</p> 
+                <p style="font-size: 38px;" id="t_cb1"><input type="button" id="cb1" class="cbutton" value="1">1:豆知識</input></p>
+                <p style="font-size: 38px;margin-bottom: 220px;" id="t_cb2"><input type="button" id="cb2" class="cbutton" value="2">2:注意事項</input></p>
+            </div>
+            <div class="contents" style="text-align:center;">
+                <input type="button" id="startButton1" class="button" style="margin-top: 58%; font-size: 60px; margin-right: 140px;" value="三平方"></input>
+                <input type="button" id="startButton2" class="button" style="margin-top: 58%; font-size: 60px; margin-left: 5px;" value="ピタゴラス"></input>
+            </div>
+        </div>
+
+        <!--豆知識・注意事項の画面-->
+        <div id="minitips" style="display: none;">
+            <div>
+                <div class="mini">
+                    <div id="mini1">
+                        <div id="output1"></div>
+                        <div id="output1.1"></div>
+                        <div id="output1.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next1" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini2" style="display: none;">
+                        <div id="output2"></div>
+                        <div id="output2.1"></div>
+                        <div id="output2.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next2" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini3" style="display: none;">
+                        <div id="output3"></div>
+                        <div id="output3.1"></div>
+                        <div id="output3.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next3" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini4" style="display: none;">
+                        <div id="output4"></div>
+                        <div id="output4.1"></div>
+                        <div id="output4.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next4" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini5" style="display: none;">
+                        <div id="output5"></div>
+                        <div id="output5.1"></div>
+                        <div id="output5.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next5" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini6" style="display: none;">
+                        <div id="output6"></div>
+                        <div id="output6.1"></div>
+                        <div id="output6.2"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="next6" value="次へ"></input>
+                        </div>
+                    </div>
+                    <div id="mini7" style="display: none;">
+                        <div id="output7"></div>
+                        <div id="output7.1"></div>
+                        <div style="text-align: right; margin-right: 50px;" id="mn">
+                            <input type="button" class="button" id="returnm" value="タイトル" onclick="location.href='./teiri.html'"></input>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="tips">
+                    <div id="output8"></div>
+                    <div id="output9"></div>
+                    <div id="output10"></div>
+                    <div id="output10.1"></div>
+                    <div id="output10.2"></div>
+                    <div id="output10.3"></div>
+                    <div id="output10.4"></div>
+                    <div id="output10.5"></div>
+                    <div id="output10.6"></div>
+                    <div id="output10.7"></div>
+                    <div id="output10.8"></div>
+                    <div id="output10.9"></div>
+                    <div id="output11"></div>
+                    <div id="output11.1"></div>
+                    <div id="output11.2"></div>
+                    <div id="output11.3"></div>
+                    <div id="output11.4"></div>
+                    <div id="output11.5"></div>
+                    <div style="text-align: right; margin-right: 50px;" id="tp">
+                        <input type="button" class="button" id="returnt" value="戻る" onclick="location.href='./teiri.html'"></input>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 問題画面 -->
+        <div id="mondai" style="display: none;">
+            <div style="font-size: 38px;" id="problemTitle"></div> <!-- タイトルを表示する場所 -->
+            <div id="problem" style="font-size: 30px;"></div>
+            <input type="text" id="userAnswer" placeholder="解答を入力してください" style="font-size: 24px; text-align: center; margin: 20px;"></input>
+            <div style="text-align: right; margin-top: 210px; margin-right: 80px;">
+                <input type="button" id="teisyutuButton" class="button" value="提出"></input>
+                <input type="button" id="nextButton" class="button" value="次の問題" style="display: none;"></input>
+                <input type="button" id="resultButton" class="button" value="結果発表！！" style="display: none;"></input>
+            </div>
+        </div>
+
+        <!-- 結果画面 -->
+        <div id="result" style="display: none;">
+            <div class="contents result">
+                <div id="resultAnswer">解答</div>
+                <div id="accuracyRate">
+                    <div id="score"></div>
+                </div>
+                <ul id="answerList"></ul> <!-- ユーザーの解答と正しい解答を表示するリスト -->
+            </div>
+            <div style="text-align: right; margin-right: 50px;">
+                <input type="button" class="button" id="tryAgainButton" value="再挑戦" onclick="location.href='./teiri.html'"></input>
+            </div>
+        </div>
+
+        <script src="./js/main.js"></script>
+        <script src="./js/question.js"></script>
+
+    </body>
+</html>
